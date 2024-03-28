@@ -20,6 +20,10 @@ class TextFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
 
+    private val textView: TextView by lazy {
+        requireView().findViewById(R.id.textView)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -37,8 +41,7 @@ class TextFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        view.findViewById<TextView>(R.id.textView).text = param1
+        textView.text = param1
     }
 
     companion object {
